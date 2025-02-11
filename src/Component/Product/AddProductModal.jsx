@@ -191,8 +191,7 @@ const AddProductModal = ({ show, handleClose, addProduct }) => {
                     type="file"
                     name="file"
                     onChange={handleChange}
-                  />
-                  //{" "}
+                  />{" "}
                 </Form.Group>
               </div>
             </div>

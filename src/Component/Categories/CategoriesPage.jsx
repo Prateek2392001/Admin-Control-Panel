@@ -3,7 +3,6 @@ import Breadcrumb from "./Breadcrumb";
 import CategoryForm from "./CategoryForm";
 import CategoryTable from "./CategoryTable";
 import "./CategoriesPage.css";
-import Dashboard from "../Dashboard/Dashboard";
 
 const CategoriesPage = () => {
   const [categories, setCategories] = useState([
@@ -32,7 +31,6 @@ const CategoriesPage = () => {
 
   return (
     <>
-      <Dashboard />
       <div className="categories-page">
         <Breadcrumb />
         <div className="content">

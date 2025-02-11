@@ -14,7 +14,7 @@ const Dashboard = () => {
         <hr />
         <ul className="menu">
           <li className="menu-item">
-            <Link to="/Product" className="icon">
+            <Link to="/" className="icon">
               <i className="bi bi-archive mx-2 fw-bold"></i>
               <span>Product</span>
             </Link>

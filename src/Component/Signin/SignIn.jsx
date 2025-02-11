@@ -21,10 +21,10 @@ const SignIn = () => {
         "https://robust.mmrsolutions.co.in/api/Login/Admin",
         { email, password }
       );
-
+      console.log(response.data);
       const data = response.data;
 
-      if (response.data.status === 200) {
+      if (response.data.status === 1) {
         Cookies.set("AdminControlToken", data?.data?.accessToken, {
           expires: 7,
         });

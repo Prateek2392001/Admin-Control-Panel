@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./ProductTable.css";
 import { Button } from "react-bootstrap";
 import AddProductModal from "./AddProductModal";
-import Dashboard from "../Dashboard/Dashboard";
 
 const ProductTable = () => {
   const [products, setProducts] = useState([]);
@@ -32,8 +31,6 @@ const ProductTable = () => {
 
   return (
     <>
-      <Dashboard />
-
       <div className="product-list-container">
         <div className="header-section">
           <div className="filters">

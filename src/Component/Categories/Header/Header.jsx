@@ -59,14 +59,6 @@ const Header = () => {
             </span>
           </li>
         </ul>
-
-        {/* <button
-          className=" text-dark navbar-toggler navbar-toggler-right d-lg-none align-self-center"
-          type="button"
-          data-bs-toggle="offcanvas"
-        >
-          <i className="bi bi-list"></i>
-        </button> */}
       </div>
     </div>
   );
