@@ -1,0 +1,101 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+.sidebar {
+  width: 240px;
+  background-color: #1e293b;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+}
+
+.hr {
+  width: 100%;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+.icon i {
+  margin: 10px;
+}
+.icon:hover {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background-color: #334155;
+  border-radius: 8px;
+}
+
+.submenu {
+  list-style: none;
+  padding: 0 15px;
+  margin-top: 5px;
+  display: none;
+}
+
+.menu-item.dropdown:hover .submenu {
+  display: block;
+}
+
+.submenu li {
+  padding: 8px 15px;
+  cursor: pointer;
+  color: #94a3b8;
+}
+
+.submenu li:hover {
+  background-color: #475569;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Responsive Media Query */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;
+  }
+
+  .menu-item a {
+    justify-content: center;
+  }
+
+  .menu-item a span {
+    display: none;
+  }
+
+  .menu-item a i {
+    font-size: 1.5rem;
+  }
+}
