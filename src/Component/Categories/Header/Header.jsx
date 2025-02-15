@@ -16,9 +16,8 @@ const Header = () => {
   );
 
   return (
-    <div className="header-container ">
+    <div className="header-container  ">
       <div className="header-left shadow">
-        {/* Search Section */}
         <div className="search-section">
           <input
             type="text"
@@ -29,7 +28,6 @@ const Header = () => {
           />
         </div>
 
-        {/* Display Search Results */}
         {searchTerm && (
           <div className="search-results">
             {filteredItems.length > 0 ? (
@@ -44,9 +42,9 @@ const Header = () => {
           </div>
         )}
 
-        <ul className="navbar-nav ms-auto">
+        <ul className="navbar-nav ms-auto me-3">
           <li
-            className="text-white border mb-2 mr-3 p-2 shadow logout-item"
+            className="text-white border p-2 shadow logout-item"
             style={{ cursor: "pointer" }}
             onClick={() => {
               Cookies.remove("AdminControlToken");
@@ -59,6 +57,22 @@ const Header = () => {
             </span>
           </li>
         </ul>
+
+        <li>
+          <Link to={"Profile"} className="mb-4 sm:none">
+            <a class="dropdown-item" href="#">
+              <div class="d-flex align-items-center me-2 mb-3 ">
+                <img
+                  src="public/profile.png"
+                  alt=""
+                  class="rounded-circle "
+                  width="54"
+                  height="54"
+                />
+              </div>
+            </a>
+          </Link>
+        </li>
       </div>
     </div>
   );

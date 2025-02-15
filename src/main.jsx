@@ -1,11 +1,12 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignIn from "./Component/Signin/SignIn.jsx";
 import ProductTable from "./Component/Product/ProductTable";
 import App from "./App.jsx";
 import CategoriesPage from "./Component/Categories/CategoriesPage.jsx";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import Profile from "./components/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         path: "/categories",
         element: <CategoriesPage />,
       },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
     ],
   },
   {
@@ -26,7 +31,9 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router}>
-    <App />;
-  </RouterProvider>
+  <Provider store={store}>
+    <RouterProvider router={router}>
+      <App />
+    </RouterProvider>
+  </Provider>
 );

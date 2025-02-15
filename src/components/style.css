@@ -1,0 +1,73 @@
+.profile-container {
+  margin-left: 17%;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.breadcrumb-title {
+  font-size: 20px;
+  border-right: 1.5px solid #aaa4a4;
+  font-family: Georgia;
+}
+
+.page-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  color: #6c757d;
+  font-family: LineIcons;
+  content: "\ea5c";
+}
+
+.page-breadcrumb .breadcrumb li.breadcrumb-item {
+  font-size: 16px;
+  font-family: Georgia;
+  margin-left: 20px;
+}
+
+/* Chips */
+
+.chip {
+  display: inline-block;
+  height: 32px;
+  padding: 0 12px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 32px;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  box-shadow: none;
+}
+
+.chip img {
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin: 0 8px 0 -12px;
+  border-radius: 50%;
+}
+
+.profile-cover {
+  background-image: linear-gradient(
+      to bottom right,
+      rgb(26 30 33 / 50%),
+      rgb(0 0 0 / 50%)
+    ),
+    url("./BannerImage.png");
+  background-size: cover;
+  height: 24rem;
+  background-position: center;
+  margin: -4rem -1.5rem -5.5rem -1.5rem;
+  padding: 1.5rem 1.5rem 6.5rem 1.5rem;
+}
+@media screen and (min-width: 560px) and (max-width: 1024px) {
+  .profile-container {
+    margin-left: 33%;
+  }
+}

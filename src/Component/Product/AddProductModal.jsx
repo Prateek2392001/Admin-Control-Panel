@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 
 const AddProductModal = ({ show, handleClose, addProduct }) => {
@@ -17,7 +17,36 @@ const AddProductModal = ({ show, handleClose, addProduct }) => {
     category: "",
   });
 
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(
+          "https://robust.mmrsolutions.co.in/api/product/category/List"
+        );
+        if (response.ok) {
+          const data = await response.json();
+          console.log("API Response:", data); // Debugging step
+
+          // Check if the response contains an array
+          if (Array.isArray(data.data)) {
+            setCategories(data.data);
+          } else if (Array.isArray(data)) {
+            setCategories(data);
+          } else {
+            console.error("Unexpected API response format:", data);
+          }
+        } else {
+          console.error("Failed to fetch categories.");
+        }
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+    fetchCategories();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -96,6 +125,7 @@ const AddProductModal = ({ show, handleClose, addProduct }) => {
                     onChange={handleChange}
                   />
                 </Form.Group>
+
                 <Form.Group className="mb-3">
                   <Form.Label>Product Name</Form.Label>
                   <Form.Control
@@ -171,6 +201,8 @@ const AddProductModal = ({ show, handleClose, addProduct }) => {
                     onChange={handleChange}
                   />
                 </Form.Group>
+              </div>
+              <div className="col-md-6">
                 <Form.Group className="mb-3">
                   <Form.Label>Add New Category</Form.Label>
                   <Form.Select
@@ -179,12 +211,17 @@ const AddProductModal = ({ show, handleClose, addProduct }) => {
                     onChange={handleChange}
                   >
                     <option value="">Select Category</option>
-                    <option>Office</option>
-                    <option>Drinkware</option>
-                    <option>Bags</option>
+                    {categories.length > 0 &&
+                      categories.map((cat, index) => (
+                        <option
+                          key={cat.id || index}
+                          value={cat.name || cat.categoryName}
+                        >
+                          {cat.name || cat.categoryName}
+                        </option>
+                      ))}
                   </Form.Select>
                 </Form.Group>
-
                 <Form.Group className="mb-3">
                   <Form.Label>Upload Files</Form.Label>
                   <Form.Control

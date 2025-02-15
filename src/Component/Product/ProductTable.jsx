@@ -32,6 +32,9 @@ const ProductTable = () => {
   return (
     <>
       <div className="product-list-container">
+        <div className="breadcrumb">
+          <span>Product</span>
+        </div>
         <div className="header-section">
           <div className="filters">
             <select>

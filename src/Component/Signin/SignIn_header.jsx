@@ -21,7 +21,7 @@ const SignIn_Header = () => {
                   alt="Logo"
                   className="logo-image"
                 />
-                <h1 className="logo">Snacked</h1>
+                <h1 className="logo text-primary">Snacked</h1>
               </div>
             </Link>
             <button

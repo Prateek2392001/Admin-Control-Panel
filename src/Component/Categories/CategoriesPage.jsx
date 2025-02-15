@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Breadcrumb from "./Breadcrumb";
-import CategoryForm from "./CategoryForm";
 import CategoryTable from "./CategoryTable";
 import "./CategoriesPage.css";
 
@@ -34,7 +33,6 @@ const CategoriesPage = () => {
       <div className="categories-page">
         <Breadcrumb />
         <div className="content">
-          {/* <CategoryForm addCategory={addCategory} /> */}
           <CategoryTable
             categories={categories}
             setCategories={setCategories}

@@ -62,15 +62,15 @@ const SignIn = () => {
                         <div className="col-12">
                           <label
                             htmlFor="inputEmailAddress"
-                            className="form-label"
+                            className="form-label "
                           >
                             Email Address
                           </label>
                           <div className="ms-auto position-relative">
                             <input
                               type="email"
-                              className="form-control radius-30 ps-5"
-                              id="inputEmailAddress"
+                              className="form-control radius-30 ps-3 text-secondary "
+                              id="inputEmailAddress "
                               placeholder="Email"
                               value={email}
                               onChange={(e) => setEmail(e.target.value)}
@@ -88,7 +88,7 @@ const SignIn = () => {
                           <div className="ms-auto position-relative">
                             <input
                               type="password"
-                              className="form-control radius-30 ps-5"
+                              className="form-control radius-30 ps-3 text-secondary"
                               id="inputChoosePassword"
                               placeholder="Password"
                               value={password}
